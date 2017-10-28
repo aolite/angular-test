@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {AppLoginComponent} from "../app-login/app-login.component";
+import {MatDialog} from "@angular/material";
 
 @Component({
   selector: 'app-app-nav',
@@ -9,8 +11,10 @@ import {Router} from "@angular/router";
 export class AppNavComponent implements OnInit {
 
   private sectionScroll = null;
+  private model: any = {};
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,
+              public dialog: MatDialog) { }
 
   ngOnInit() {
     this.doScroll();
@@ -35,6 +39,18 @@ export class AppNavComponent implements OnInit {
 
   goToRoute(url:any):void{
     this.router.navigate([url]);
+  }
+
+  loginDialog():void{
+
+    let dialogRef = this.dialog.open(AppLoginComponent, {
+      width: '250px',
+      data: { name: this.model.username, animal: this.model.password }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
   internalRoute(url:any):void{

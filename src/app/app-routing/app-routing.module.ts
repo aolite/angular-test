@@ -6,7 +6,7 @@ import {AppLoginComponent} from "../app-login/app-login.component";
 
 const appRoutes: Routes = [
   { path: 'minerva',        component: AppMainPageComponent },
-  { path: 'login',        component:  AppLoginComponent},
+  //{ path: 'login',        component:  AppLoginComponent},
   { path: '',   redirectTo: 'minerva', pathMatch: 'full' }
 ];
 
