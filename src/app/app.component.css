@@ -1,0 +1,41 @@
+.example-button-row {
+  display: relative;
+  align-items: left;
+  justify-content: space-around;
+  padding-top: 50px;
+}
+
+.fixed-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%  !important;
+}
+.inner-sidenav-content {
+  overflow: auto;
+  bottom:0;
+  left:0;
+  right:0;
+  margin: 10px;
+}
+mat-sidenav {
+  background-color: whitesmoke;
+  color: rgba(0, 0, 0, 0.87);
+  min-width:200px;
+}
+
+.example-sidenav-content {
+  position:absolute;
+  display: flex;
+  padding-top: 20px;
+}
+.wrapper{
+  position:relative;
+  padding-top: 60px;
+  width: 100%;
+}
+
+#custom-nav {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
