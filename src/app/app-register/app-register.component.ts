@@ -39,6 +39,19 @@ export class AppRegisterComponent implements OnInit {
 
   register(user: User): void {
     console.log(user);
+
+    this.loading = true;
+
+    this.userService.save(user)
+      .then(u => {
+        this.alertService.success('Registration successful', true);
+        this.router.navigate(['/']);
+      })
+      .catch(error => {
+        this.alertService.error(error);
+        this.loading = false;
+      });
+
   }
 
   getEmailError() {
