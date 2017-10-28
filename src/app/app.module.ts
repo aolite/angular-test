@@ -23,6 +23,7 @@ import { AppAlertComponent } from './app-alert/app-alert.component';
 import {AlertService} from "./alert-service.service";
 import {AuthenticationService} from "./authentication.service";
 import {UserService} from "./user.service";
+import { AppHomeComponent } from './app-home/app-home.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {UserService} from "./user.service";
     AppMainPageComponent,
     AppFooterComponent,
     AppLoginComponent,
-    AppAlertComponent
+    AppAlertComponent,
+    AppHomeComponent
   ],
   imports: [
     BrowserModule,

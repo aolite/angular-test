@@ -45,11 +45,9 @@ export class AppLoginComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home';
   }
 
-  login(){
-    console.log("username"+ this.data.name);
-    console.log("password"+ this.data.password);
+  login(user: User):void{
 
-    this.authenticationService.login(this.data.username, this.data.password)
+    this.authenticationService.login(user.username, user.password)
       .subscribe(
         data => {
           this.closeDialog();

@@ -11,7 +11,6 @@ import {MatDialog} from "@angular/material";
 export class AppNavComponent implements OnInit {
 
   private sectionScroll = null;
-  private model: any = {};
 
   constructor(private router:Router,
               public dialog: MatDialog) { }
@@ -45,7 +44,7 @@ export class AppNavComponent implements OnInit {
 
     let dialogRef = this.dialog.open(AppLoginComponent, {
       width: '250px',
-      data: { name: this.model.username, password: this.model.password }
+      data: { }
     });
 
     dialogRef.afterClosed().subscribe(result => {
