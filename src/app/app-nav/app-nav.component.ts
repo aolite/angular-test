@@ -45,7 +45,7 @@ export class AppNavComponent implements OnInit {
 
     let dialogRef = this.dialog.open(AppLoginComponent, {
       width: '250px',
-      data: { name: this.model.username, animal: this.model.password }
+      data: { name: this.model.username, password: this.model.password }
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -21,6 +21,8 @@ import { AppFooterComponent } from './app-footer/app-footer.component';
 import { AppLoginComponent } from './app-login/app-login.component';
 import { AppAlertComponent } from './app-alert/app-alert.component';
 import {AlertService} from "./alert-service.service";
+import {AuthenticationService} from "./authentication.service";
+import {UserService} from "./user.service";
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import {AlertService} from "./alert-service.service";
   ],
   entryComponents: [AppLoginComponent],
   providers: [
-    AlertService
+    AlertService,
+    AuthenticationService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
