@@ -12,6 +12,7 @@ import {MatGridListModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material';
 import {MatInputModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material';
+import {MatSelectModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AppNavComponent } from './app-nav/app-nav.component';
@@ -24,6 +25,7 @@ import {AlertService} from "./alert-service.service";
 import {AuthenticationService} from "./authentication.service";
 import {UserService} from "./user.service";
 import { AppHomeComponent } from './app-home/app-home.component';
+import { AppRegisterComponent } from './app-register/app-register.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { AppHomeComponent } from './app-home/app-home.component';
     AppFooterComponent,
     AppLoginComponent,
     AppAlertComponent,
-    AppHomeComponent
+    AppHomeComponent,
+    AppRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ import { AppHomeComponent } from './app-home/app-home.component';
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
+    MatSelectModule,
     AppRoutingModule
   ],
   entryComponents: [AppLoginComponent],

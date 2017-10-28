@@ -6,7 +6,7 @@
       mat-button><i class="fa fa-cubes" (click)="internalRoute('features')" aria-hidden="true">Features</i></button>
     <button mat-button><i class="fa fa-briefcase" aria-hidden="true">About</i></button>
     <button mat-button><i class="fa fa-user-circle" (click)="loginDialog()" aria-hidden="true">Login</i></button>
-    <button mat-button><i class="fa fa-sign-in" aria-hidden="true">Register</i></button>
+    <button mat-button><i class="fa fa-sign-in" (click)="register()" aria-hidden="true">Register</i></button>
   </div>
 
   <div *ngIf="currentUser" class="button-row">
