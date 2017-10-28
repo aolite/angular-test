@@ -16,6 +16,7 @@ import {AppRoutingModule} from "./app-routing/app-routing.module";
 import { AppMainPageComponent } from './app-main-page/app-main-page.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { AppLoginComponent } from './app-login/app-login.component';
+import { AppAlertComponent } from './app-alert/app-alert.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AppLoginComponent } from './app-login/app-login.component';
     AppNavComponent,
     AppMainPageComponent,
     AppFooterComponent,
-    AppLoginComponent
+    AppLoginComponent,
+    AppAlertComponent
   ],
   imports: [
     BrowserModule,
