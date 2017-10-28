@@ -1,0 +1,8 @@
+<h1>Hi {{currentUser.username}}!</h1>
+<p *ngIf="!currentUser.is_admin">
+  minerva-home works! {{currentUser.typeuser}}
+</p>
+
+<p *ngIf="currentUser.is_admin">
+  minerva-home works for Admin!!!
+</p>

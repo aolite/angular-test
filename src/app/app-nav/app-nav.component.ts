@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {NavigationEnd, Router} from "@angular/router";
 import {AppLoginComponent} from "../app-login/app-login.component";
 import {MatDialog} from "@angular/material";
+import {User} from "../../datamodel/User";
+import {AuthenticationService} from "../authentication.service";
 
 @Component({
   selector: 'app-app-nav',
@@ -11,13 +13,31 @@ import {MatDialog} from "@angular/material";
 export class AppNavComponent implements OnInit {
 
   private sectionScroll = null;
+  private   currentUser: User;
 
-  constructor(private router:Router,
-              public dialog: MatDialog) { }
+  constructor(private authenticationService: AuthenticationService,
+              private router:Router,
+              public dialog: MatDialog) {
+
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    authenticationService.getLoggedInName.subscribe(name => {
+      if (name){
+        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      }else{
+        this.currentUser = null;
+      }
+    });
+
+  }
 
   ngOnInit() {
-    this.doScroll();
-    this.sectionScroll= null;
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      this.doScroll();
+      this.sectionScroll= null;
+    });
   }
 
   doScroll() {
@@ -57,6 +77,11 @@ export class AppNavComponent implements OnInit {
     this.sectionScroll= url;
     this.router.navigate(['/minerva' ], {fragment: url});
     this.doScroll();
+  }
+
+  logout (){
+    this.authenticationService.logout();
+    this.router.navigate(['/']);
   }
 
 }
