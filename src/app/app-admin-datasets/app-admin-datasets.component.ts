@@ -24,8 +24,7 @@ export class AppAdminDatasetsComponent implements OnInit {
   }
 
   addDataset(): void {
-    console.log('Add Dataset');
-    //this.router.navigate(['/dataset/add']);
+    this.router.navigate(['/dataset/add']);
   }
 
 }

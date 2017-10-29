@@ -10,11 +10,13 @@ import {AppAdminTopicsComponent} from "../app-admin-topics/app-admin-topics.comp
 import {AppAdminTopicsDetailComponent} from "../app-admin-topics-detail/app-admin-topics-detail.component";
 import {AppAdminTopicsAddComponent} from "../app-admin-topics-add/app-admin-topics-add.component";
 import {AppAdminDatasetsComponent} from "../app-admin-datasets/app-admin-datasets.component";
+import {AppAddDatasetComponent} from "../app-add-dataset/app-add-dataset.component";
 
 const appRoutes: Routes = [
   { path: 'minerva',        component: AppMainPageComponent },
   { path: 'register',        component:  AppRegisterComponent},
   { path: 'home',        component:  AppHomeComponent},
+  { path: 'dataset/add',        component:  AppAddDatasetComponent},
   { path: 'admin/users',        component:  AppAdminUsersComponent},
   { path: 'admin/topics',        component:  AppAdminTopicsComponent},
   { path: 'admin/datasets',        component:  AppAdminDatasetsComponent},
