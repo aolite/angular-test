@@ -29,6 +29,8 @@ import { AppHomeComponent } from './app-home/app-home.component';
 import { AppRegisterComponent } from './app-register/app-register.component';
 import { AppAdminUsersComponent } from './app-admin-users/app-admin-users.component';
 import { AppAdminUserDetailComponent } from './app-admin-user-detail/app-admin-user-detail.component';
+import { AppAdminTopicsComponent } from './app-admin-topics/app-admin-topics.component';
+import {TopicService} from "./topic.service";
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { AppAdminUserDetailComponent } from './app-admin-user-detail/app-admin-u
     AppHomeComponent,
     AppRegisterComponent,
     AppAdminUsersComponent,
-    AppAdminUserDetailComponent
+    AppAdminUserDetailComponent,
+    AppAdminTopicsComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +68,8 @@ import { AppAdminUserDetailComponent } from './app-admin-user-detail/app-admin-u
   providers: [
     AlertService,
     AuthenticationService,
-    UserService
+    UserService,
+    TopicService
   ],
   bootstrap: [AppComponent]
 })

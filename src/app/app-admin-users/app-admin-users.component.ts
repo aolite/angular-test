@@ -1,8 +1,7 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {User} from "../../datamodel/User";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 import {DataSource} from '@angular/cdk/collections';
-import {AlertService} from "../alert-service.service";
 import {UserService} from "../user.service";
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
@@ -22,9 +21,7 @@ export class AppAdminUsersComponent implements OnInit {
   displayedColumns = ['username', 'email', 'password', 'typeuser', 'action'];
   dataSource: TableDataSource | null;
 
-  constructor(private route: ActivatedRoute,
-              private router: Router,
-              private alertService: AlertService,
+  constructor(private router: Router,
               private userService: UserService) {
 
   }
