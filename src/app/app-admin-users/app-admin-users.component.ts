@@ -36,7 +36,7 @@ export class AppAdminUsersComponent implements OnInit {
 
   editUser (user): void {
     console.log ('edit user' + user.username);
-    //this.router.navigate(['/user/detail', user.username]);
+    this.router.navigate(['admin/users/detail/', user.username]);
   }
 
   getUsers(): void {

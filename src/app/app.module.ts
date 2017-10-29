@@ -28,6 +28,7 @@ import {UserService} from "./user.service";
 import { AppHomeComponent } from './app-home/app-home.component';
 import { AppRegisterComponent } from './app-register/app-register.component';
 import { AppAdminUsersComponent } from './app-admin-users/app-admin-users.component';
+import { AppAdminUserDetailComponent } from './app-admin-user-detail/app-admin-user-detail.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AppAdminUsersComponent } from './app-admin-users/app-admin-users.compon
     AppAlertComponent,
     AppHomeComponent,
     AppRegisterComponent,
-    AppAdminUsersComponent
+    AppAdminUsersComponent,
+    AppAdminUserDetailComponent
   ],
   imports: [
     BrowserModule,
