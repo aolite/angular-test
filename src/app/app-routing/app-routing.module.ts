@@ -9,6 +9,7 @@ import {AppAdminUserDetailComponent} from "../app-admin-user-detail/app-admin-us
 import {AppAdminTopicsComponent} from "../app-admin-topics/app-admin-topics.component";
 import {AppAdminTopicsDetailComponent} from "../app-admin-topics-detail/app-admin-topics-detail.component";
 import {AppAdminTopicsAddComponent} from "../app-admin-topics-add/app-admin-topics-add.component";
+import {AppAdminDatasetsComponent} from "../app-admin-datasets/app-admin-datasets.component";
 
 const appRoutes: Routes = [
   { path: 'minerva',        component: AppMainPageComponent },
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
   { path: 'home',        component:  AppHomeComponent},
   { path: 'admin/users',        component:  AppAdminUsersComponent},
   { path: 'admin/topics',        component:  AppAdminTopicsComponent},
+  { path: 'admin/datasets',        component:  AppAdminDatasetsComponent},
   { path: 'admin/users/detail/:id',        component:  AppAdminUserDetailComponent},
   { path: 'admin/topics/detail/:id',        component:  AppAdminTopicsDetailComponent},
   { path: 'admin/topics/add',        component:  AppAdminTopicsAddComponent},

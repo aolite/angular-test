@@ -14,6 +14,7 @@ import {MatInputModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material';
 import {MatTableModule} from '@angular/material';
+import {MatCardModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AppNavComponent } from './app-nav/app-nav.component';
@@ -33,6 +34,8 @@ import { AppAdminTopicsComponent } from './app-admin-topics/app-admin-topics.com
 import {TopicService} from "./topic.service";
 import { AppAdminTopicsDetailComponent } from './app-admin-topics-detail/app-admin-topics-detail.component';
 import { AppAdminTopicsAddComponent } from './app-admin-topics-add/app-admin-topics-add.component';
+import { AppAdminDatasetsComponent } from './app-admin-datasets/app-admin-datasets.component';
+import {DatasetService} from "./dataset.service";
 
 @NgModule({
   declarations: [
@@ -48,7 +51,8 @@ import { AppAdminTopicsAddComponent } from './app-admin-topics-add/app-admin-top
     AppAdminUserDetailComponent,
     AppAdminTopicsComponent,
     AppAdminTopicsDetailComponent,
-    AppAdminTopicsAddComponent
+    AppAdminTopicsAddComponent,
+    AppAdminDatasetsComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +70,7 @@ import { AppAdminTopicsAddComponent } from './app-admin-topics-add/app-admin-top
     MatDialogModule,
     MatSelectModule,
     MatTableModule,
+    MatCardModule,
     AppRoutingModule
   ],
   entryComponents: [AppLoginComponent],
@@ -73,7 +78,8 @@ import { AppAdminTopicsAddComponent } from './app-admin-topics-add/app-admin-top
     AlertService,
     AuthenticationService,
     UserService,
-    TopicService
+    TopicService,
+    DatasetService
   ],
   bootstrap: [AppComponent]
 })

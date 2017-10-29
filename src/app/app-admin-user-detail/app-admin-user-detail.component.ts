@@ -68,11 +68,11 @@ export class AppAdminUserDetailComponent implements OnInit {
     console.log(value)
 
     this.userService.upate(value)
-      .then(u =>{
+      .then(u => {
         this.alertService.success('Registration successful', true);
         this.goBack();
       })
-      .catch(error =>{
+      .catch(error => {
         this.alertService.error(error);
         this.loading = false;
       });

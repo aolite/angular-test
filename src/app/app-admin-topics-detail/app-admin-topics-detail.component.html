@@ -1,3 +1,29 @@
-<p>
-  app-admin-topics-detail works!
-</p>
+<app-app-alert></app-app-alert>
+
+<div *ngIf="topic" class="wrapper">
+  <h1>Minerva Topic Detail: {{topic.name}}</h1>
+
+  <form [formGroup]="topicDetailForm" (ngSubmit)="topicDetailForm.valid &&  updateTopic (topicDetailForm.value)" novalidate>
+    <div mat-dialog-content>
+
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name" value="{{topic.name}}"  required>
+      </mat-form-field>
+
+    </div>
+    <div mat-dialog-content>
+
+      <mat-form-field>
+        <input matInput placeholder="Description" formControlName="description" value="{{topic.description}}"  required>
+      </mat-form-field>
+
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-raised-button type='submit' [disabled]="!topicDetailForm.valid" color="primary">Save</button>
+      <button mat-raised-button  [routerLink]="['/admin/topics']" color="warn">Cancel</button>
+    </div>
+  </form>
+
+
+</div>
