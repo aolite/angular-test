@@ -15,6 +15,7 @@ import {MatDialogModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material';
 import {MatTableModule} from '@angular/material';
 import {MatCardModule} from '@angular/material';
+import {MatChipsModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AppNavComponent } from './app-nav/app-nav.component';
@@ -71,6 +72,7 @@ import {DatasetService} from "./dataset.service";
     MatSelectModule,
     MatTableModule,
     MatCardModule,
+    MatChipsModule,
     AppRoutingModule
   ],
   entryComponents: [AppLoginComponent],
