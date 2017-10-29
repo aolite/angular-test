@@ -31,6 +31,8 @@ import { AppAdminUsersComponent } from './app-admin-users/app-admin-users.compon
 import { AppAdminUserDetailComponent } from './app-admin-user-detail/app-admin-user-detail.component';
 import { AppAdminTopicsComponent } from './app-admin-topics/app-admin-topics.component';
 import {TopicService} from "./topic.service";
+import { AppAdminTopicsDetailComponent } from './app-admin-topics-detail/app-admin-topics-detail.component';
+import { AppAdminTopicsAddComponent } from './app-admin-topics-add/app-admin-topics-add.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import {TopicService} from "./topic.service";
     AppRegisterComponent,
     AppAdminUsersComponent,
     AppAdminUserDetailComponent,
-    AppAdminTopicsComponent
+    AppAdminTopicsComponent,
+    AppAdminTopicsDetailComponent,
+    AppAdminTopicsAddComponent
   ],
   imports: [
     BrowserModule,

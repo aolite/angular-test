@@ -30,9 +30,13 @@ export class AppAdminTopicsComponent implements OnInit {
     this.dataSource = new TableDataSource(this.topicService);
   }
 
+  addTopic (): void {
+    this.router.navigate(['admin/topics/add']);
+  }
+
   editTopic (topic: Topic): void {
     console.log ('edit topic' + topic.name);
-    //this.router.navigate(['admin/topics/detail/', topic.name]);
+    this.router.navigate(['admin/topics/detail/', topic.name]);
   }
 
   deleteTopic(topic: Topic): void {
