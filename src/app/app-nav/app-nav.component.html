@@ -13,7 +13,7 @@
     <button mat-button><i class="fa fa-tachometer" aria-hidden="true">Dashboard</i></button>
     <button mat-button><i class="fa fa-database" aria-hidden="true">Datasets</i></button>
     <button mat-button><i class="fa fa-tags" aria-hidden="true">Topics</i></button>
-    <button mat-button><i class="fa fa-users" aria-hidden="true">Users</i></button>
+    <button mat-button><i class="fa fa-users" [routerLink]="['/admin/users']" aria-hidden="true">Users</i></button>
     <button mat-button><i class="fa fa-sign-out" (click)="logout()" aria-hidden="true">Logout</i></button>
   </div>
 

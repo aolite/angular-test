@@ -13,6 +13,7 @@ import {MatFormFieldModule} from '@angular/material';
 import {MatInputModule} from '@angular/material';
 import {MatDialogModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material';
+import {MatTableModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AppNavComponent } from './app-nav/app-nav.component';
@@ -26,6 +27,7 @@ import {AuthenticationService} from "./authentication.service";
 import {UserService} from "./user.service";
 import { AppHomeComponent } from './app-home/app-home.component';
 import { AppRegisterComponent } from './app-register/app-register.component';
+import { AppAdminUsersComponent } from './app-admin-users/app-admin-users.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { AppRegisterComponent } from './app-register/app-register.component';
     AppLoginComponent,
     AppAlertComponent,
     AppHomeComponent,
-    AppRegisterComponent
+    AppRegisterComponent,
+    AppAdminUsersComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +56,7 @@ import { AppRegisterComponent } from './app-register/app-register.component';
     MatInputModule,
     MatDialogModule,
     MatSelectModule,
+    MatTableModule,
     AppRoutingModule
   ],
   entryComponents: [AppLoginComponent],
