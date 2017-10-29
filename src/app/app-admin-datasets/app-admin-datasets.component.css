@@ -1,9 +1,17 @@
 .example-card {
   width: 400px;
 }
-.padd-btn{
-  padding-bottom: 20px;
-}
+
 .grid-style{
   background-color: whitesmoke;
+}
+
+.md-fab-bottom-right2 {
+  z-index:5;
+  position : fixed;
+  display : flex;
+  align-self : flex-end;
+  bottom : 10%;
+  margin-bottom : 0%;
+  margin-left: 90% !important;
 }
