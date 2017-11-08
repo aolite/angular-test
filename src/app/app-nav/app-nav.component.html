@@ -10,7 +10,8 @@
   </div>
 
   <div *ngIf="currentUser" class="button-row">
-    <button mat-button><i class="fa fa-tachometer" aria-hidden="true">Dashboard</i></button>
+    <button
+      mat-button><i class="fa fa-tachometer" [routerLink]="['/home']" aria-hidden="true">Dashboard</i></button>
     <button
       mat-button><i class="fa fa-database" [routerLink]="['/admin/datasets']" aria-hidden="true">Datasets</i></button>
     <button mat-button><i class="fa fa-tags" [routerLink]="['/admin/topics']" aria-hidden="true">Topics</i></button>
