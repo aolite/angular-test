@@ -1,0 +1,35 @@
+mat-sidenav {
+  width: 300px;
+  height: 100%;
+  background-color: #eee;
+}
+
+.md-toolbar-tools-bottom {
+  font-size: small;
+  color: white;
+}
+
+.user-avatar {
+  border-radius: 99%;
+}
+
+.toolbar-row{
+  height: 20px;
+}
+
+.sidenav-content-body{
+  background-color: whitesmoke;
+  height: 100%;
+  width: 100%;
+}
+
+.example-container {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+
+
+
+

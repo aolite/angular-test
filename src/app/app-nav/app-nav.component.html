@@ -1,4 +1,4 @@
-<mat-toolbar id="custom-nav" class="fixed-header" color="primary">
+<mat-toolbar *ngIf="!currentUser" id="custom-nav" class="fixed-header" color="primary">
   <span>Minerva Eye</span>
   <div *ngIf="!currentUser" class="button-row">
     <button mat-button><i class="fa fa-home" (click)="goToRoute ('/minerva')" aria-hidden="true">Home</i></button>
