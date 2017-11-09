@@ -1,7 +1,7 @@
 mat-sidenav {
   width: 300px;
   height: 100%;
-  background-color: #eee;
+  background-color: whitesmoke;
 }
 
 .md-toolbar-tools-bottom {
@@ -28,6 +28,15 @@ mat-sidenav {
   width: 100%;
   background-color: white;
 }
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.icon-positioning{
+  padding: 0 14px;
+}
+
 
 
 
