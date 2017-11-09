@@ -31,12 +31,12 @@ export class AppAdminTopicsComponent implements OnInit {
   }
 
   addTopic (): void {
-    this.router.navigate(['home/topics/add']);
+    this.router.navigate(['home/admin/topics/add']);
   }
 
   editTopic (topic: Topic): void {
     console.log ('edit topic' + topic.name);
-    this.router.navigate(['home/topics/detail/', topic.name]);
+    this.router.navigate(['home/admin/topics/detail/', topic.name]);
   }
 
   deleteTopic(topic: Topic): void {

@@ -19,14 +19,14 @@ const appRoutes: Routes = [
   { path: 'home',
     component:  AppHomeComponent,
     children: [
-      { path: 'topics',        component:  AppAdminTopicsComponent},
-      { path: 'dashboard', component:  AppAdminDashboardComponent},
-      { path: 'datasets',        component:  AppAdminDatasetsComponent},
-      { path: 'dataset/add',        component:  AppAddDatasetComponent},
-      { path: 'users',              component: AppAdminUsersComponent},
-      { path: 'users/detail/:id',        component:  AppAdminUserDetailComponent},
-      { path: 'topics/detail/:id',        component:  AppAdminTopicsDetailComponent},
-      { path: 'topics/add',        component:  AppAdminTopicsAddComponent}
+      { path: 'admin/topics',        component:  AppAdminTopicsComponent},
+      { path: 'admin/dashboard', component:  AppAdminDashboardComponent},
+      { path: 'admin/datasets',        component:  AppAdminDatasetsComponent},
+      { path: 'admin/dataset/add',        component:  AppAddDatasetComponent},
+      { path: 'admin/users',              component: AppAdminUsersComponent},
+      { path: 'admin/users/detail/:id',        component:  AppAdminUserDetailComponent},
+      { path: 'admin/topics/detail/:id',        component:  AppAdminTopicsDetailComponent},
+      { path: 'admin/topics/add',        component:  AppAdminTopicsAddComponent}
     ]
   },
   { path: '',   redirectTo: 'minerva', pathMatch: 'full' }
