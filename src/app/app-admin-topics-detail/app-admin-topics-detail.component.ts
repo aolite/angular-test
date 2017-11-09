@@ -50,7 +50,7 @@ export class AppAdminTopicsDetailComponent implements OnInit {
     this.topicService.updateTopic(value)
       .then(u =>{
         this.alertService.success('Registration successful', true);
-        this.router.navigate(['/admin/topics']);
+        this.router.navigate(['/home/topics']);
       })
       .catch(error =>{
         this.alertService.error(error);

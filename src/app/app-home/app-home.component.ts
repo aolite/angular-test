@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../../datamodel/User";
 import {Router} from "@angular/router";
+import {AuthenticationService} from "../authentication.service";
 
 @Component({
   selector: 'app-app-home',
@@ -11,7 +12,8 @@ export class AppHomeComponent implements OnInit {
 
   currentUser: User;
 
-  constructor(private router:Router) {
+  constructor(private authenticationService: AuthenticationService,
+    private router: Router) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (!this.currentUser){
       this.router.navigate(['/']);
@@ -22,6 +24,11 @@ export class AppHomeComponent implements OnInit {
     if (!this.currentUser){
       this.router.navigate(['/']);
     }
+  }
+
+  logout (){
+    this.authenticationService.logout();
+    this.router.navigate(['/']);
   }
 
 }

@@ -39,6 +39,7 @@ import { AppAdminTopicsAddComponent } from './app-admin-topics-add/app-admin-top
 import { AppAdminDatasetsComponent } from './app-admin-datasets/app-admin-datasets.component';
 import {DatasetService} from "./dataset.service";
 import { AppAddDatasetComponent } from './app-add-dataset/app-add-dataset.component';
+import { AppAdminDashboardComponent } from './app-admin-dashboard/app-admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { AppAddDatasetComponent } from './app-add-dataset/app-add-dataset.compon
     AppAdminTopicsDetailComponent,
     AppAdminTopicsAddComponent,
     AppAdminDatasetsComponent,
-    AppAddDatasetComponent
+    AppAddDatasetComponent,
+    AppAdminDashboardComponent
   ],
   imports: [
     BrowserModule,

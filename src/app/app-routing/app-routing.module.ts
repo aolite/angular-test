@@ -11,18 +11,24 @@ import {AppAdminTopicsDetailComponent} from "../app-admin-topics-detail/app-admi
 import {AppAdminTopicsAddComponent} from "../app-admin-topics-add/app-admin-topics-add.component";
 import {AppAdminDatasetsComponent} from "../app-admin-datasets/app-admin-datasets.component";
 import {AppAddDatasetComponent} from "../app-add-dataset/app-add-dataset.component";
+import {AppAdminDashboardComponent} from "../app-admin-dashboard/app-admin-dashboard.component";
 
 const appRoutes: Routes = [
   { path: 'minerva',        component: AppMainPageComponent },
   { path: 'register',        component:  AppRegisterComponent},
-  { path: 'home',        component:  AppHomeComponent},
-  { path: 'dataset/add',        component:  AppAddDatasetComponent},
-  { path: 'admin/users',        component:  AppAdminUsersComponent},
-  { path: 'admin/topics',        component:  AppAdminTopicsComponent},
-  { path: 'admin/datasets',        component:  AppAdminDatasetsComponent},
-  { path: 'admin/users/detail/:id',        component:  AppAdminUserDetailComponent},
-  { path: 'admin/topics/detail/:id',        component:  AppAdminTopicsDetailComponent},
-  { path: 'admin/topics/add',        component:  AppAdminTopicsAddComponent},
+  { path: 'home',
+    component:  AppHomeComponent,
+    children: [
+      { path: 'topics',        component:  AppAdminTopicsComponent},
+      { path: 'dashboard', component:  AppAdminDashboardComponent},
+      { path: 'datasets',        component:  AppAdminDatasetsComponent},
+      { path: 'dataset/add',        component:  AppAddDatasetComponent},
+      { path: 'users',              component: AppAdminUsersComponent},
+      { path: 'users/detail/:id',        component:  AppAdminUserDetailComponent},
+      { path: 'topics/detail/:id',        component:  AppAdminTopicsDetailComponent},
+      { path: 'topics/add',        component:  AppAdminTopicsAddComponent}
+    ]
+  },
   { path: '',   redirectTo: 'minerva', pathMatch: 'full' }
 ];
 

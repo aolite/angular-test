@@ -35,7 +35,7 @@ export class AppAdminTopicsAddComponent implements OnInit {
     this.topicService.createTopic(topic)
       .then(() =>{
         this.alertService.success('Registration successful', true);
-        this.router.navigate(['/admin/topics']);
+        this.router.navigate(['/home/topics']);
       })
       .catch(error => {
         this.alertService.error(error);
