@@ -41,6 +41,7 @@ import {DatasetService} from "./dataset.service";
 import { AppAddDatasetComponent } from './app-add-dataset/app-add-dataset.component';
 import { AppAdminDashboardComponent } from './app-admin-dashboard/app-admin-dashboard.component';
 import {RouterNamesService} from "./router-names.service";
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import {RouterNamesService} from "./router-names.service";
     AppAdminTopicsAddComponent,
     AppAdminDatasetsComponent,
     AppAddDatasetComponent,
-    AppAdminDashboardComponent
+    AppAdminDashboardComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,
