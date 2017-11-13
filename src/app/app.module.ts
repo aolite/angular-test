@@ -40,6 +40,7 @@ import { AppAdminDatasetsComponent } from './app-admin-datasets/app-admin-datase
 import {DatasetService} from "./dataset.service";
 import { AppAddDatasetComponent } from './app-add-dataset/app-add-dataset.component';
 import { AppAdminDashboardComponent } from './app-admin-dashboard/app-admin-dashboard.component';
+import {RouterNamesService} from "./router-names.service";
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { AppAdminDashboardComponent } from './app-admin-dashboard/app-admin-dash
     AuthenticationService,
     UserService,
     TopicService,
-    DatasetService
+    DatasetService,
+    RouterNamesService
   ],
   bootstrap: [AppComponent]
 })

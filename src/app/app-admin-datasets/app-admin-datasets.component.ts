@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Dataset} from "../../datamodel/Dataset";
 import {Router} from "@angular/router";
 import {DatasetService} from "../dataset.service";
+import {RouterNamesService} from "../router-names.service";
 
 @Component({
   selector: 'app-app-admin-datasets',
@@ -13,7 +14,10 @@ export class AppAdminDatasetsComponent implements OnInit {
   datasets: Dataset [];
 
   constructor(private router: Router,
-              private datasetsService: DatasetService) { }
+              private datasetsService: DatasetService,
+              private routeNames: RouterNamesService) {
+    this.routeNames.title.next('Datasets');
+  }
 
   ngOnInit() {
     this.datasetsService.getDatasets().then(data => this.datasets = data);

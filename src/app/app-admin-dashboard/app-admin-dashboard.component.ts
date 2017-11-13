@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RouterNamesService} from "../router-names.service";
 
 @Component({
   selector: 'app-app-admin-dashboard',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppAdminDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private routeNames: RouterNamesService) {
+    routeNames.title.next('Dashboard');
+  }
 
   ngOnInit() {
   }

@@ -11,6 +11,7 @@ import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';
 import {Topic} from "../../datamodel/Topic";
 import {TopicService} from "../topic.service";
+import {RouterNamesService} from "../router-names.service";
 
 @Component({
   selector: 'app-app-admin-topics',
@@ -24,7 +25,10 @@ export class AppAdminTopicsComponent implements OnInit {
   dataSource: TableDataSource | null;
 
   constructor(private router: Router,
-              private topicService: TopicService) { }
+              private topicService: TopicService,
+              private routeNames: RouterNamesService ) {
+    this.routeNames.title.next('Topics');
+  }
 
   ngOnInit() {
     this.dataSource = new TableDataSource(this.topicService);

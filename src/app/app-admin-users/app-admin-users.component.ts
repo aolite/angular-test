@@ -9,6 +9,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';
+import {RouterNamesService} from "../router-names.service";
 
 @Component({
   selector: 'app-app-admin-users',
@@ -22,8 +23,8 @@ export class AppAdminUsersComponent implements OnInit {
   dataSource: TableDataSource | null;
 
   constructor(private router: Router,
-              private userService: UserService) {
-
+              private userService: UserService, private routeNames: RouterNamesService) {
+    this.routeNames.title.next('Users');
   }
 
 
