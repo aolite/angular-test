@@ -20,28 +20,31 @@ import {MatListModule} from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { AppNavComponent } from './app-nav/app-nav.component';
-import {AppRoutingModule} from "./app-routing/app-routing.module";
+import {AppRoutingModule} from './app-routing/app-routing.module';
 import { AppMainPageComponent } from './app-main-page/app-main-page.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { AppLoginComponent } from './app-login/app-login.component';
 import { AppAlertComponent } from './app-alert/app-alert.component';
-import {AlertService} from "./alert-service.service";
-import {AuthenticationService} from "./authentication.service";
-import {UserService} from "./user.service";
+import {AlertService} from './alert-service.service';
+import {AuthenticationService} from './authentication.service';
+import {UserService} from './user.service';
 import { AppHomeComponent } from './app-home/app-home.component';
 import { AppRegisterComponent } from './app-register/app-register.component';
 import { AppAdminUsersComponent } from './app-admin-users/app-admin-users.component';
 import { AppAdminUserDetailComponent } from './app-admin-user-detail/app-admin-user-detail.component';
 import { AppAdminTopicsComponent } from './app-admin-topics/app-admin-topics.component';
-import {TopicService} from "./topic.service";
+import {TopicService} from './topic.service';
 import { AppAdminTopicsDetailComponent } from './app-admin-topics-detail/app-admin-topics-detail.component';
 import { AppAdminTopicsAddComponent } from './app-admin-topics-add/app-admin-topics-add.component';
 import { AppAdminDatasetsComponent } from './app-admin-datasets/app-admin-datasets.component';
-import {DatasetService} from "./dataset.service";
+import {DatasetService} from './dataset.service';
 import { AppAddDatasetComponent } from './app-add-dataset/app-add-dataset.component';
 import { AppAdminDashboardComponent } from './app-admin-dashboard/app-admin-dashboard.component';
-import {RouterNamesService} from "./router-names.service";
+import {RouterNamesService} from './router-names.service';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
+
+import { AgmCoreModule } from '@agm/core';
+import { MapChartComponent } from './map-chart/map-chart.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +64,8 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
     AppAdminDatasetsComponent,
     AppAddDatasetComponent,
     AppAdminDashboardComponent,
-    BarChartComponent
+    BarChartComponent,
+    MapChartComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +86,10 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
     MatCardModule,
     MatChipsModule,
     MatListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCBk6HjCDq0PQnoFtpeYGdxzWngkDen_so'
+    })
   ],
   entryComponents: [AppLoginComponent],
   providers: [

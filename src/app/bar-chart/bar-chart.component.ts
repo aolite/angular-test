@@ -30,6 +30,7 @@ export class BarChartComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
+
     if (this.chart) {
       this.updateChart();
     }
@@ -72,7 +73,7 @@ export class BarChartComponent implements OnInit, OnChanges {
       .call(d3.axisLeft(this.yScale));
   }
 
-  updateChart (){
+  updateChart () {
     // update scales & axis
     this.xScale.domain(this.data.map(d => d[0]));
     this.yScale.domain([0, d3.max(this.data, d => d[1])]);
