@@ -5,6 +5,11 @@
   </button>
 </div>
 
+<div>
+  <ul>
+    <li *ngFor="let user of users"> <a href="{{user['@id']}}">{{user.username}}</a></li>
+  </ul>
+</div>
 
 <mat-grid-list cols="3" rowHeight="1:2" class="mat-elevation-z8 grid-style">
   <mat-grid-tile *ngFor="let ds of datasets">
