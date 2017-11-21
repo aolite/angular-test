@@ -5,25 +5,19 @@
   </button>
 </div>
 
-<div>
-  <ul>
-    <li *ngFor="let user of users"> <a href="{{user['@id']}}">{{user.username}}</a></li>
-  </ul>
-</div>
-
 <mat-grid-list cols="3" rowHeight="1:2" class="mat-elevation-z8 grid-style">
-  <mat-grid-tile *ngFor="let ds of datasets">
+  <mat-grid-tile *ngFor="let ds of catalogs">
 
     <mat-card>
       <mat-card-header>
         <mat-card-title><h3>{{ds.name}}</h3></mat-card-title>
         <mat-card-subtitle>
           <mat-chip-list >
-            <mat-chip *ngFor="let topic of ds.tags" color="primary" selected="true">{{topic}}</mat-chip>
+            <!--<mat-chip *ngFor="let topic of ds.tags" color="primary" selected="true">{{topic}}</mat-chip>-->
           </mat-chip-list>
         </mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image src="http://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      <img mat-card-image src="{{ds.image}}">
       <mat-card-content>
         <p>
           {{ds.description}}
@@ -31,7 +25,7 @@
       </mat-card-content>
       <mat-card-actions>
         <button mat-button color="primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-        <button mat-button color="warn"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        <button mat-button color="warn" (click)="deleteDataCatalog(ds); $event.stopPropagation()"><i class="fa fa-trash" aria-hidden="true"></i></button>
       </mat-card-actions>
     </mat-card>
   </mat-grid-tile>

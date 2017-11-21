@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import {Http} from "@angular/http";
-import {Dataset} from "../datamodel/Dataset";
-import {User} from "../datamodel/User";
+import {Http} from '@angular/http';
+import {Dataset} from '../datamodel/Dataset';
+import {DataCatalog} from '../datamodel/DataCatalog';
 
 @Injectable()
 export class DatasetService {
 
   private datasetUrl = 'http://localhost:8080/dataSets';
+
+  private dataCatalog = 'http://localhost:8080/semantic/datacatalog';
 
   constructor(private http: Http) { }
 
@@ -27,13 +29,22 @@ export class DatasetService {
 
   //TODO: Borrar
 
-  getSemanticUserData(): Promise<User[]> {
+  getSemanticUserData(): Promise<DataCatalog[]> {
+
     return this.http
-      .get('http://localhost:8080/semantic/dataSet')
+      .get('http://localhost:8080/semantic/datacatalog')
       .toPromise()
       .then((response) => {
-        return response.json() as User[];
+        return response.json() as DataCatalog[];
       })
+      .catch(this.handleError);
+  }
+
+  deleteDataCatalog(id: string): Promise<void> {
+    const url = `${this.dataCatalog}/${id}`;
+    return this.http.delete(url)
+      .toPromise()
+      .then(() => null)
       .catch(this.handleError);
   }
 

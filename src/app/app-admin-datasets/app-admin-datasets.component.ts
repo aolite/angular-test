@@ -4,6 +4,8 @@ import {Router} from "@angular/router";
 import {DatasetService} from "../dataset.service";
 import {RouterNamesService} from "../router-names.service";
 import {User} from "../../datamodel/User";
+import {DataCatalog} from "../../datamodel/DataCatalog";
+import {isUndefined} from "util";
 
 @Component({
   selector: 'app-app-admin-datasets',
@@ -13,7 +15,7 @@ import {User} from "../../datamodel/User";
 export class AppAdminDatasetsComponent implements OnInit {
 
   datasets: Dataset [];
-  users: User[];
+  catalogs: DataCatalog[];
 
   constructor(private router: Router,
               private datasetsService: DatasetService,
@@ -22,9 +24,30 @@ export class AppAdminDatasetsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.datasetsService.getDatasets().then(data => this.datasets = data);
+    //this.datasetsService.getDatasets().then(data => this.datasets = data);
     this.datasetsService.getSemanticUserData().then(data => {
-      this.users = data['@graph'] ;
+      this.catalogs = data['@graph'];
+      console.log(this.catalogs)
+      if (this.catalogs === undefined) {
+        console.log(data['@id'])
+        if (data['@id'] !== undefined) {
+          var data_instance = new DataCatalog ();
+          data_instance['@id'] = data['@id'];
+          data_instance['@context'] = data['@context'];
+          data_instance['@type'] = data['@type'];
+          data_instance.author = data['author'];
+          data_instance.name = data['name'];
+          data_instance.description = data['description'];
+          data_instance.datePublished = data['datePublished'];
+          data_instance.image =  data['image'];
+          data_instance.url = data['url'];
+
+          this.catalogs = [];
+          this.catalogs.push(data_instance);
+
+        }
+
+      }
     });
 
   }
@@ -35,6 +58,12 @@ export class AppAdminDatasetsComponent implements OnInit {
 
   addDataset(): void {
     this.router.navigate(['/home/admin/dataset/add']);
+  }
+
+  deleteDataCatalog(dataCatalog: DataCatalog): void {
+    this.datasetsService.deleteDataCatalog(dataCatalog['@id']).then(() => {
+      this.catalogs= this.catalogs.filter(cat => cat['@id'] !== dataCatalog['@id']);
+    });
   }
 
 }
