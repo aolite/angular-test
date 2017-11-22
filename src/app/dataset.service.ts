@@ -27,8 +27,7 @@ export class DatasetService {
     return Promise.reject(error.message || error);
   }
 
-  //TODO: Borrar
-
+/*
   getSemanticUserData(): Promise<DataCatalog[]> {
 
     return this.http
@@ -47,5 +46,7 @@ export class DatasetService {
       .then(() => null)
       .catch(this.handleError);
   }
+
+  */
 
 }

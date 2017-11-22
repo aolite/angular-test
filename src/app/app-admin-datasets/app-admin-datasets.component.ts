@@ -24,8 +24,7 @@ export class AppAdminDatasetsComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.datasetsService.getDatasets().then(data => this.datasets = data);
-    this.datasetsService.getSemanticUserData().then(data => {
+   /* this.datasetsService.getSemanticUserData().then(data => {
       this.catalogs = data['@graph'];
       console.log(this.catalogs)
       if (this.catalogs === undefined) {
@@ -49,7 +48,7 @@ export class AppAdminDatasetsComponent implements OnInit {
 
       }
     });
-
+    */
   }
 
   viewDataset(ds: Dataset): void {
@@ -61,9 +60,11 @@ export class AppAdminDatasetsComponent implements OnInit {
   }
 
   deleteDataCatalog(dataCatalog: DataCatalog): void {
-    this.datasetsService.deleteDataCatalog(dataCatalog['@id']).then(() => {
-      this.catalogs= this.catalogs.filter(cat => cat['@id'] !== dataCatalog['@id']);
+    console.log ('Remove Data Catalog');
+    /*this.datasetsService.deleteDataCatalog(dataCatalog['@id']).then(() => {
+      this.catalogs = this.catalogs.filter(cat => cat['@id'] !== dataCatalog['@id']);
     });
+    */
   }
 
 }

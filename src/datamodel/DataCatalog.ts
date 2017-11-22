@@ -1,13 +1,19 @@
+import {Tags} from "./Tags";
+import {Place} from "./Place";
+
 export interface DataCatalog {
-  '@id': string;
-  '@context': string;
-  '@type': string;
+  id: number;
   name: string;
   author: string;
   description: string;
-  datePublished: string;
+  dataPublished: string;
   image: string;
   url: string;
+  license: string;
+  query: string;
+  topic: string;
+  tags: Tags [];
+  place: Place;
 }
 
 

@@ -98,6 +98,7 @@ import { MapChartComponent } from './map-chart/map-chart.component';
     UserService,
     TopicService,
     DatasetService,
+    DatacatalogService,
     RouterNamesService
   ],
   bootstrap: [AppComponent]
