@@ -6,6 +6,7 @@ import {RouterNamesService} from "../router-names.service";
 import {User} from "../../datamodel/User";
 import {DataCatalog} from "../../datamodel/DataCatalog";
 import {isUndefined} from "util";
+import {DatacatalogService} from "../datacatalog.service";
 
 @Component({
   selector: 'app-app-admin-datasets',
@@ -14,11 +15,10 @@ import {isUndefined} from "util";
 })
 export class AppAdminDatasetsComponent implements OnInit {
 
-  datasets: Dataset [];
   catalogs: DataCatalog[];
 
   constructor(private router: Router,
-              private datasetsService: DatasetService,
+              private datacatalogService: DatacatalogService,
               private routeNames: RouterNamesService) {
     this.routeNames.title.next('Datasets');
   }
@@ -49,6 +49,10 @@ export class AppAdminDatasetsComponent implements OnInit {
       }
     });
     */
+    this.datacatalogService.getDatacatalogs().then(data =>{
+      this.catalogs = data;
+      console.log(this.catalogs);
+    });
   }
 
   viewDataset(ds: Dataset): void {
@@ -61,6 +65,9 @@ export class AppAdminDatasetsComponent implements OnInit {
 
   deleteDataCatalog(dataCatalog: DataCatalog): void {
     console.log ('Remove Data Catalog');
+    this.datacatalogService.deleteDataCatalog(dataCatalog.id).then(() =>{
+      this.catalogs = this.catalogs.filter(catalog => catalog.id !== dataCatalog.id);
+    });
     /*this.datasetsService.deleteDataCatalog(dataCatalog['@id']).then(() => {
       this.catalogs = this.catalogs.filter(cat => cat['@id'] !== dataCatalog['@id']);
     });

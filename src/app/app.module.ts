@@ -45,6 +45,7 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { MapChartComponent } from './map-chart/map-chart.component';
+import {DatacatalogService} from "./datacatalog.service";
 
 @NgModule({
   declarations: [

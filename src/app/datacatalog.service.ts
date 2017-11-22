@@ -5,7 +5,7 @@ import {DataCatalog} from "../datamodel/DataCatalog";
 @Injectable()
 export class DatacatalogService {
 
-  private dataCatalogUrl = 'http://localhost:8080/semantic/datacatalog';
+  private dataCatalogUrl = 'http://localhost:8080/dataCatalogs';
 
   constructor(private http: Http) { }
 
@@ -15,6 +15,14 @@ export class DatacatalogService {
       .then((response) => {
         return response.json() as DataCatalog[];
       })
+      .catch(this.handleError);
+  }
+
+  deleteDataCatalog(id: number): Promise<void> {
+    const url = `${this.dataCatalogUrl}/${id}`;
+    return this.http.delete(url)
+      .toPromise()
+      .then(() => null)
       .catch(this.handleError);
   }
 
