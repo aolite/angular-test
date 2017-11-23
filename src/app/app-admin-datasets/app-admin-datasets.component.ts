@@ -49,7 +49,7 @@ export class AppAdminDatasetsComponent implements OnInit {
       }
     });
     */
-    this.datacatalogService.getDatacatalogs().then(data =>{
+    this.datacatalogService.getDatacatalogs().then(data => {
       this.catalogs = data;
     });
   }
@@ -62,9 +62,14 @@ export class AppAdminDatasetsComponent implements OnInit {
     this.router.navigate(['/home/admin/dataset/add']);
   }
 
+  datacatalogDetail (id: number) {
+    console.log('Go to Catalog Detail' + id);
+    this.router.navigate(['/home/admin/dataset/detail/', id ]);
+  }
+
   deleteDataCatalog(dataCatalog: DataCatalog): void {
     console.log ('Remove Data Catalog');
-    this.datacatalogService.deleteDataCatalog(dataCatalog.id).then(() =>{
+    this.datacatalogService.deleteDataCatalog(dataCatalog.id).then(() => {
       this.catalogs = this.catalogs.filter(catalog => catalog.id !== dataCatalog.id);
     });
     /*this.datasetsService.deleteDataCatalog(dataCatalog['@id']).then(() => {

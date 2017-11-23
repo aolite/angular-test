@@ -8,7 +8,7 @@
 <mat-grid-list cols="3" rowHeight="1:2" class="mat-elevation-z8 grid-style">
   <mat-grid-tile *ngFor="let ds of catalogs">
 
-    <mat-card>
+    <mat-card (click)="datacatalogDetail(ds.id)">
       <mat-card-header>
         <mat-card-title><h2>{{ds.name}}</h2></mat-card-title>
         <mat-card-subtitle>

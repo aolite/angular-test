@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Http} from "@angular/http";
-import {DataCatalog} from "../datamodel/DataCatalog";
+import {Http} from '@angular/http';
+import {DataCatalog} from '../datamodel/DataCatalog';
 
 @Injectable()
 export class DatacatalogService {
@@ -17,7 +17,15 @@ export class DatacatalogService {
       })
       .catch(this.handleError);
   }
-
+  getDataCatalogById(id: number): Promise<DataCatalog> {
+    const url = `${this.dataCatalogUrl}/${id}`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response =>{
+        return response.json() as DataCatalog;
+      })
+      .catch(this.handleError);
+  }
   deleteDataCatalog(id: number): Promise<void> {
     const url = `${this.dataCatalogUrl}/${id}`;
     return this.http.delete(url)

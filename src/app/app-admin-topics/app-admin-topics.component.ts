@@ -74,6 +74,7 @@ export class TableDataSource extends DataSource<Topic> {
     this.subject.observers = [];
   }
 
+
   deleteDataSource(topic: Topic): void {
     this.topicService.deleteTopic(topic.name)
       .then(() => {
