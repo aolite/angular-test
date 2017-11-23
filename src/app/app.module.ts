@@ -17,6 +17,7 @@ import {MatTableModule} from '@angular/material';
 import {MatCardModule} from '@angular/material';
 import {MatChipsModule} from '@angular/material';
 import {MatListModule} from '@angular/material/list';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { AppComponent } from './app.component';
 import { AppNavComponent } from './app-nav/app-nav.component';
@@ -45,8 +46,9 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { MapChartComponent } from './map-chart/map-chart.component';
-import {DatacatalogService} from "./datacatalog.service";
+import {DatacatalogService} from './datacatalog.service';
 import { AdminDatacatalogDetailComponent } from './admin-datacatalog-detail/admin-datacatalog-detail.component';
+import { MapChartDatasourcesComponent } from './map-chart-datasources/map-chart-datasources.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,8 @@ import { AdminDatacatalogDetailComponent } from './admin-datacatalog-detail/admi
     AppAdminDashboardComponent,
     BarChartComponent,
     MapChartComponent,
-    AdminDatacatalogDetailComponent
+    AdminDatacatalogDetailComponent,
+    MapChartDatasourcesComponent
   ],
   imports: [
     BrowserModule,
@@ -89,6 +92,7 @@ import { AdminDatacatalogDetailComponent } from './admin-datacatalog-detail/admi
     MatCardModule,
     MatChipsModule,
     MatListModule,
+    MatTabsModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCBk6HjCDq0PQnoFtpeYGdxzWngkDen_so'

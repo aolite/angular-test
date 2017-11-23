@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {DatacatalogService} from "../datacatalog.service";
 import {DataCatalog} from "../../datamodel/DataCatalog";
+import {DatacatalogService} from "../datacatalog.service";
 
 @Component({
-  selector: 'app-map-chart',
-  templateUrl: './map-chart.component.html',
-  styleUrls: ['./map-chart.component.css']
+  selector: 'app-map-chart-datasources',
+  templateUrl: './map-chart-datasources.component.html',
+  styleUrls: ['./map-chart-datasources.component.css']
 })
-export class MapChartComponent implements OnInit {
+export class MapChartDatasourcesComponent implements OnInit {
 
   lat: number = 51.678418;
   lng: number = 7.809007;
@@ -19,9 +19,8 @@ export class MapChartComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.datacatalogService.getDatacatalogs().then(data =>{
+    this.datacatalogService.getDatacatalogs().then(data => {
       this.catalogs = data;
     });
   }
-
 }

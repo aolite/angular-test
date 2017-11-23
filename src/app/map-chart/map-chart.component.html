@@ -1,8 +1,7 @@
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
 <agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker *ngFor="let ds of catalogs" [latitude]="ds.place.geo.latitude" [longitude]="ds.place.geo.longitude"
-              (markerClick)="clickedMarker(ds.place.name, ds.place.id)">
+  <agm-marker *ngFor="let ds of catalogs" [latitude]="ds.place.geo.latitude" [longitude]="ds.place.geo.longitude">
     <agm-info-window>
       <div>
         <h4>{{ds.name}}</h4>
