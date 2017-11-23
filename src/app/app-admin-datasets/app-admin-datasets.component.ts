@@ -51,7 +51,6 @@ export class AppAdminDatasetsComponent implements OnInit {
     */
     this.datacatalogService.getDatacatalogs().then(data =>{
       this.catalogs = data;
-      console.log(this.catalogs);
     });
   }
 
