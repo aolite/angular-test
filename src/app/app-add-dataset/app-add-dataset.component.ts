@@ -19,7 +19,8 @@ export class AppAddDatasetComponent implements OnInit {
               public fb: FormBuilder) {
     this.addDatasetForm = fb.group({
       name: ['', Validators.required],
-      description: ['', Validators.required]
+      description: ['', Validators.required],
+
     }, {});
   }
 

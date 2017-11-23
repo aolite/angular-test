@@ -1,5 +1,5 @@
-import {Tags} from "./Tags";
-import {Place} from "./Place";
+import {Tags} from './Tags';
+import {Place} from './Place';
 
 export interface DataCatalog {
   id: number;
