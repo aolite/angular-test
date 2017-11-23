@@ -11,10 +11,11 @@
         <strong>Author: </strong><span>{{ds.author}}</span>
       </div>
       <div>
-        <strong>Published Date: </strong><span>{{ds.dataPublished}}</span>
+        <strong>Published Date: </strong>
+        <span>{{ds.datePublished}}</span>
       </div>
       <div>
-        <span><a href="#">Go to Detail</a></span>
+        <span><a [routerLink]="['/home/admin/dataset/detail/',ds.id]">Go to Detail</a></span>
       </div>
 
     </agm-info-window>

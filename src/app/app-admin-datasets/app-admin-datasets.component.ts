@@ -20,7 +20,7 @@ export class AppAdminDatasetsComponent implements OnInit {
   constructor(private router: Router,
               private datacatalogService: DatacatalogService,
               private routeNames: RouterNamesService) {
-    this.routeNames.title.next('Datasets');
+    this.routeNames.title.next('Data Catalogs Collection');
   }
 
   ngOnInit() {

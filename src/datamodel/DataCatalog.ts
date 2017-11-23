@@ -6,7 +6,7 @@ export interface DataCatalog {
   name: string;
   author: string;
   description: string;
-  dataPublished: string;
+  datePublished: string;
   image: string;
   url: string;
   license: string;
